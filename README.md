@@ -55,6 +55,23 @@ A **self-collected, balanced dataset** of 400 clips:
 - Only 400 clips, which likely undersample the variation across jazz eras and recording conditions.
 - The clip-level train/validation split allows clips from the same song to fall on both sides, risking data leakage; a group-based split (keeping each song's clips together) would be more rigorous.
 
+## How to Run
+
+This project was developed in **Google Colab**, with the dataset stored in Google Drive. The notebook mounts Drive and reads from a project folder structured by genre:
+DS340_Final_Project/
+
+├── audio_clips/              # raw 30-second .wav clips, one folder per genre
+
+├── training_images_30s/      # mel spectrogram images (model input)
+
+├── training_images_mfcc/     # MFCC images
+
+└── training_images_chroma/   # chromagram images
+
+To run it yourself, open the notebook in Colab, mount your own Drive, and update the path constants near the top of each section (e.g. `BASE_DIR`, `IMAGE_BASE_DIR`) to point to your copy of the data. A GPU runtime is recommended for training. Required libraries: PyTorch, torchvision, Librosa, scikit-learn, matplotlib, seaborn, and Pillow.
+
+**Note on data:** The self-collected audio clips are not included in this repository. The notebook documents the full pipeline from raw audio through to results, so the methodology is fully reproducible with your own audio organized in the structure above.
+
 ## Repository Contents
 
 *training notebook*
