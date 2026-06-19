@@ -74,4 +74,4 @@ To run it yourself, open the notebook in Colab, mount your own Drive, and update
 
 ## Repository Contents
 
-*training notebook*
+Jazz_subgenre_classification_project.ipynb — full pipeline from audio processing through model training, evaluation, and both experiments
